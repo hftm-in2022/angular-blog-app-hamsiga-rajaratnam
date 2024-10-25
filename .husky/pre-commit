@@ -1,7 +1,2 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 # Add debugging information
-echo "Node version: $(node -v)"
-echo "Running commitlint..."
 npx --no-install commitlint --edit "$1"
