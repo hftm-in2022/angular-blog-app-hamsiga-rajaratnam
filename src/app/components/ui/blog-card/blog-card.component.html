@@ -1,0 +1,10 @@
+<div class="blog-card">
+  <img [src]="blogEntry.headerImageUrl || getDefaultImage()" alt="Blog Image" />
+  <h2>{{ blogEntry.title }}</h2>
+  <p>{{ blogEntry.contentPreview }}</p>
+  <div class="meta">
+    <span>By: {{ blogEntry.author }}</span>
+    <span>Likes: {{ blogEntry.likes }}</span>
+    <span>Comments: {{ blogEntry.comments }}</span>
+  </div>
+</div>
