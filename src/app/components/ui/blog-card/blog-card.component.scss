@@ -1,8 +1,9 @@
+@import "../../../../assets/styles/variables.scss";
+
 .blog-card {
   position: relative;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   width: 25%;
-  border: maroon 1px solid;
   border-radius: 5%;
   margin: 10px;
 
@@ -40,14 +41,13 @@
 
       .likes,
       .comments {
-        color: #800000;
         margin: 0 10px 0 0;
+        color: $hover-color;
       }
     }
 
     .view-more-btn{
       padding: 10px;
-      background: maroon;
       color: white;
       border-radius: 10px;
       border: none;
