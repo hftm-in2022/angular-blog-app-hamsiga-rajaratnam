@@ -15,4 +15,7 @@ export class BlogCardComponent {
     return 'assets/images/default_header_img.jpg';
   }
 
+  viewMore(id: number) {
+    
+  }
 }

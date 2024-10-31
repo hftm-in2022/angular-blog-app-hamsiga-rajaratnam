@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.scss or styles.css */
+
+/* Set the global font family */
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  box-sizing: border-box; /* Use border-box model */
+}
+
+/* Optional: Apply styles for all elements */
+* {
+  box-sizing: inherit;
+}

@@ -1,0 +1,9 @@
+.blog-list {
+  .row {
+    margin: 0; // Remove default row margin if needed
+  }
+
+  app-blog-card {
+    width: 25%;
+  }
+}

@@ -1,10 +1,31 @@
-<div class="blog-card">
-  <img [src]="blogEntry.headerImageUrl || getDefaultImage()" alt="Blog Image" />
-  <h2>{{ blogEntry.title }}</h2>
-  <p>{{ blogEntry.contentPreview }}</p>
-  <div class="meta">
-    <span>By: {{ blogEntry.author }}</span>
-    <span>Likes: {{ blogEntry.likes }}</span>
-    <span>Comments: {{ blogEntry.comments }}</span>
+<div class="card mb-4 blog-card">
+  <img
+    [src]="blogEntry.headerImageUrl || getDefaultImage()"
+    class="card-img-top blog-card-img"
+    alt="Blog Image"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ blogEntry.title }}</h5>
+    <div class="meta d-flex justify-content-between align-items-center mb-3">
+      <!-- Author icon and name -->
+      <span class="author">
+        <i class="fas fa-user"></i> {{ blogEntry.author }}
+      </span>
+    </div>
+
+    <!-- Likes and Comments -->
+    <div class="meta d-flex justify-content-between align-items-center mb-2">
+      <span class="likes">
+        <i class="fas fa-thumbs-up"></i> {{ blogEntry.likes }}
+      </span>
+      <span class="comments">
+        <i class="fas fa-comment"></i> {{ blogEntry.comments }}
+      </span>
+    </div>
+
+    <!-- Button with styling -->
+    <button class="btn btn-primary mt-3 view-more-btn" (click)="viewMore(blogEntry.id)">
+      View More
+    </button>
   </div>
 </div>
