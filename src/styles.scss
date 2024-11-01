@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/variables.scss";
+
+/* Set the global font family */
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  box-sizing: border-box; /* Use border-box model */
+}
+
+/* Optional: Apply styles for all elements */
+* {
+  box-sizing: inherit;
+}
+
+// Links
+a {
+  color: $link-color;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+// Buttons
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &--primary {
+    background-color: $primary-color;
+    color: #FFFFFF;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: #FFFFFF;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+// Card Styles
+.card {
+  background-color: $card-background-color;
+  border: 1px solid $primary-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+// Utility Classes
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
