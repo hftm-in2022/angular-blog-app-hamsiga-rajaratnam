@@ -1,0 +1,17 @@
+.todo-app {
+  margin: 10px;
+  width: 100%;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.todo-button{
+  margin-left: 2em;
+}
+
+.mat-mdc-form-field {
+  min-width: 50%;
+}
