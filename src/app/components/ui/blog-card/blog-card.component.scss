@@ -3,8 +3,8 @@
 .blog-card {
   position: relative;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  border-radius: 5%;
   margin: 10px;
+  width: 400px;
 
   // Hover effect
   &:hover {
@@ -13,43 +13,18 @@
     background-color: #f8f9fa; // Light background on hover
   }
 
-  .blog-card-img {
-    height: 200px;
-    object-fit: cover;
-    width: 98%;
-    margin: 1%;
-    border-radius: 5%;
+  .blog-card-title {
+    padding: 15px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 370px;
+    font-size: 20px;
+    color: #715059;
   }
 
-  .card-body {
-    background-color: #fff;
-    padding: 20px;
-    width: 98%;
-    margin: 1%;
-
-    .card-title {
-      font-size: 20px;
-    }
-
-    .meta {
-      margin:0 0 15px 0;
-
-      .author {
-        color: #6c757d;
-      }
-
-      .likes,
-      .comments {
-        margin: 0 10px 0 0;
-        color: $hover-color;
-      }
-    }
-
-    .view-more-btn{
-      padding: 10px;
-      color: white;
-      border-radius: 10px;
-      border: none;
-    }
+  .blog-card-img {
+    object-fit: cover;
+    height: 300px;
   }
 }
