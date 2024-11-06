@@ -20,3 +20,17 @@ export interface BlogPagedData {
   totalCount: number;
   maxPageSize: number;
 }
+
+export interface BlogDetailOverView {
+  id: number;
+  title: string;
+  content: string;
+  author: string;
+  createdAt: string;
+  updatedAt: string;
+  headerImageUrl: string;
+  likes: number;
+  likedByMe: boolean;
+  createdByMe: boolean;
+  comments: any[]; // Adjust this based on the structure of comments
+}

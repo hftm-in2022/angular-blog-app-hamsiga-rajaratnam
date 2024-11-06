@@ -9,8 +9,9 @@ import {
   MatCardHeader,
   MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-blog-card',
@@ -26,7 +27,8 @@ import {MatIcon} from "@angular/material/icon";
     MatCardSubtitle,
     MatCardTitle,
     NgForOf,
-    MatIcon
+    MatIcon,
+    NgOptimizedImage
   ],
   templateUrl: './blog-card.component.html',
   styleUrl: './blog-card.component.scss'
@@ -34,11 +36,13 @@ import {MatIcon} from "@angular/material/icon";
 export class BlogCardComponent {
   @Input() blogEntry!: BlogEntryOverview;
 
+  constructor(private router: Router) {}
+
   getDefaultImage(): string {
     return 'assets/images/default_header_img.jpg';
   }
 
   viewMore(id: number) {
-
+    this.router.navigate(['/blogs', id]);
   }
 }
