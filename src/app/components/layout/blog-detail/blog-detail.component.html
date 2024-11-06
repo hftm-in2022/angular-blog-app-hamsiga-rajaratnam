@@ -1,0 +1,12 @@
+<div class="blog-detail" *ngIf="!loading">
+  <h2>{{ blog?.title }}</h2>
+  <p class="author">By: {{ blog?.author }}</p>
+  <p class="date">Published on: {{ blog?.createdAt | date }}</p>
+  <div class="content">
+    <p>{{ blog?.content }}</p>
+  </div>
+  <button (click)="goBack()">Back to Overview</button>
+</div>
+
+<div *ngIf="loading" class="loading">Loading...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
