@@ -1,35 +1,21 @@
-<div class="card mb-4 blog-card">
-  <div style="width: 350px; height: 500px">
-
-  <img
-    [src]="blogEntry.headerImageUrl || getDefaultImage()"
-    class="card-img-top blog-card-img"
-    alt="Blog Image"
-  />
-  <div class="card-body">
-    <h5 class="card-title">{{ blogEntry.title }}</h5>
-    <div class="meta d-flex justify-content-between align-items-center mb-3">
-      <!-- Author icon and name -->
-      <span class="author">
+<mat-card class="blog-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title class="blog-card-title">{{ blogEntry.title }}</mat-card-title>
+    <mat-card-subtitle>
         <i class="fas fa-user"></i> {{ blogEntry.author }}
-      </span>
-    </div>
-
-    <!-- Likes and Comments -->
-    <div class="meta d-flex justify-content-between align-items-center mb-2">
-      <span class="likes">
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image class="blog-card-img" [src]="blogEntry.headerImageUrl || getDefaultImage()" alt="Blog Cover Photo">
+  <mat-card-content>
+    <div>
         <i class="fas fa-thumbs-up"></i> {{ blogEntry.likes }}
-      </span>
-      <span class="comments">
-        <i class="fas fa-comment"></i> {{ blogEntry.comments }}
-      </span>
+        <i class="fas fa-comment"></i> {{ blogEntry.likes }}
     </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button class="button--primary" (click)="viewMore(blogEntry.id)">More</button>
+  </mat-card-actions>
+</mat-card>
 
-    <!-- Button with styling -->
-    <button class="button--primary mt-3 view-more-btn" (click)="viewMore(blogEntry.id)">
-      View More
-    </button>
-  </div>
-</div>
-</div>
+
 
