@@ -4,6 +4,6 @@ import {BlogDetailComponent} from "./components/layout/blog-detail/blog-detail.c
 
 export const routes: Routes = [
   { path: '', redirectTo: '/blogs', pathMatch: 'full' },
-  { path: 'blogs', component: BlogListLayoutComponent }, // The page showing the list of blogs
-  { path: 'blogs/:id', component: BlogDetailComponent }, // The detail page for a blog post
+  { path: 'blogs', loadChildren: () => import('./features/blog-overview/blog-overview.module').then(m => m.BlogOverviewModule) }, // Lazy loading the BlogOverviewModule
+  { path: 'blogs/:id', loadChildren: () => import('./features/blog-detail/blog-detail.module').then(m => m.BlogDetailModule) }, // Lazy loading the BlogDetailModule
 ];
