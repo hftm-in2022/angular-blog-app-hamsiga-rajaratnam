@@ -1,0 +1,1 @@
+import{W as n,j as e,o as i}from"./chunk-PYYZPINW.js";var m=(()=>{class t{static{this.\u0275fac=function(o){return new(o||t)}}static{this.\u0275mod=i({type:t})}static{this.\u0275inj=e({imports:[n]})}}return t})();export{m as BlogDetailModule};

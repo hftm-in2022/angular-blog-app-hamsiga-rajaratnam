@@ -1,0 +1,1 @@
+import{a as e,b as m}from"./chunk-ELJS36I7.js";import{W as r,j as t,o as i}from"./chunk-PYYZPINW.js";var c=(()=>{class o{static{this.\u0275fac=function(n){return new(n||o)}}static{this.\u0275mod=i({type:o})}static{this.\u0275inj=t({imports:[r,m,e]})}}return o})();export{c as BlogOverviewModule};
