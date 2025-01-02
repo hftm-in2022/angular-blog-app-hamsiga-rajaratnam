@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {BlogPagedData} from "../models/blog.model";
+import {BlogDetailOverView, BlogPagedData} from "../models/blog.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +27,10 @@ export class BlogService {
     // const url = "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries";
     return this.http.get<BlogPagedData>(url, {params});
   }
+
+  getBlogById(blogId: string): Observable<BlogDetailOverView> {
+    const url = `/entries/${blogId}`;  // Use the proxy URL path
+    return this.http.get<BlogDetailOverView>(url);
+  }
+
 }
