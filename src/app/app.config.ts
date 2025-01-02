@@ -7,11 +7,11 @@ import { loggingInterceptor } from './interceptors/logging.interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    {
-      provide: HTTP_INTERCEPTORS,
-      useValue: loggingInterceptor,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useValue: loggingInterceptor,
+    //   multi: true
+    // },
     provideHttpClient()
   ]
 };
