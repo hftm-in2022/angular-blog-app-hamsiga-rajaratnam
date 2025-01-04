@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import {BlogResolver} from "./components/layout/blog-detail/resolvers/blog.resolver";
+import {BlogResolver} from "./features/blog/state/blog.resolver";
 export const routes: Routes = [
   {
     path: '',
@@ -9,14 +9,14 @@ export const routes: Routes = [
   {
     path: 'blogs',
     loadComponent: () =>
-      import('./components/layout/blog-list-layout/blog-list-layout.component').then(
+      import('./features/blog/components/blog-list-layout/blog-list-layout.component').then(
         (c) => c.BlogListLayoutComponent
       ),
   },
   {
     path: 'blogs/:id',
     loadComponent: () =>
-      import('./components/layout/blog-detail/blog-detail.component').then(
+      import('./features/blog/components/blog-detail/blog-detail.component').then(
         (c) => c.BlogDetailComponent
       ),
     resolve: { blog: BlogResolver }

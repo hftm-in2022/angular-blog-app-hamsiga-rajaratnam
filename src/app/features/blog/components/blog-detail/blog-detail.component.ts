@@ -1,6 +1,6 @@
 import {Component, WritableSignal, signal, ChangeDetectionStrategy} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BlogDetailOverView } from '../../../models/blog.model';
+import { BlogDetailOverView } from '../../../../models/blog.model';
 import {DatePipe, NgIf} from "@angular/common";
 
 @Component({

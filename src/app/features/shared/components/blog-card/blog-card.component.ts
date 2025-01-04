@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, WritableSignal} from '@angular/core';
-import { BlogEntryOverview } from '../../../models/blog.model';
+import { BlogEntryOverview } from '../../../../models/blog.model';
 import { Router } from '@angular/router';
 import {MatButton} from "@angular/material/button";
 import {

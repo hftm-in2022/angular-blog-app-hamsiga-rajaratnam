@@ -1,6 +1,6 @@
 import { Injectable, signal, WritableSignal } from '@angular/core';
-import { BlogEntryOverview } from '../models/blog.model';
-import { BlogService } from '../services/blog.service';
+import { BlogEntryOverview } from '../../../models/blog.model';
+import { BlogService } from '../../../services/blog.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

@@ -1,8 +1,8 @@
 import {Component, OnInit, WritableSignal, signal, computed, ChangeDetectionStrategy} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogCardComponent } from '../../ui/blog-card/blog-card.component';
-import { BlogState } from '../../../state/blog.state';
-import { BlogEntryOverview } from '../../../models/blog.model';
+import { BlogCardComponent } from '../../../shared/components/blog-card/blog-card.component';
+import { BlogState } from '../../state/blog.state';
+import { BlogEntryOverview } from '../../../../models/blog.model';
 
 @Component({
   selector: 'app-blog-list-layout',
