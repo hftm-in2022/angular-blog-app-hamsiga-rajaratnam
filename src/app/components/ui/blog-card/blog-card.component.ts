@@ -1,6 +1,7 @@
-import {Component, Input, Signal, WritableSignal} from '@angular/core';
-import { BlogEntryOverview } from "../../../models/blog.model";
-import { MatButton } from "@angular/material/button";
+import {ChangeDetectionStrategy, Component, Input, WritableSignal} from '@angular/core';
+import { BlogEntryOverview } from '../../../models/blog.model';
+import { Router } from '@angular/router';
+import {MatButton} from "@angular/material/button";
 import {
   MatCard,
   MatCardActions,
@@ -9,9 +10,8 @@ import {
   MatCardHeader,
   MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
-import { NgForOf, NgOptimizedImage } from "@angular/common";
-import { MatIcon } from "@angular/material/icon";
-import {Router} from "@angular/router";
+import {NgForOf, NgOptimizedImage} from "@angular/common";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-blog-card',
@@ -31,7 +31,8 @@ import {Router} from "@angular/router";
     NgOptimizedImage
   ],
   templateUrl: './blog-card.component.html',
-  styleUrl: './blog-card.component.scss'
+  styleUrls: ['./blog-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BlogCardComponent {
   @Input({ required: true }) blogEntry!: WritableSignal<BlogEntryOverview | null>;
