@@ -29,7 +29,7 @@ export class BlogService {
   }
 
   getBlogById(blogId: string): Observable<BlogDetailOverView> {
-    const url = `/entries/${blogId}`;  // Use the proxy URL path
+    const url = `/entries/${blogId}`;
     return this.http.get<BlogDetailOverView>(url);
   }
 

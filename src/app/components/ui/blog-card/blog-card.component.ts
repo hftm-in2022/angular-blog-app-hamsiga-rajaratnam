@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
-import {BlogEntryOverview} from "../../../models/blog.model";
+import {ChangeDetectionStrategy, Component, Input, WritableSignal} from '@angular/core';
+import { BlogEntryOverview } from '../../../models/blog.model';
+import { Router } from '@angular/router';
 import {MatButton} from "@angular/material/button";
 import {
   MatCard,
@@ -11,7 +12,6 @@ import {
 } from "@angular/material/card";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-blog-card',
@@ -31,10 +31,12 @@ import {Router} from "@angular/router";
     NgOptimizedImage
   ],
   templateUrl: './blog-card.component.html',
-  styleUrl: './blog-card.component.scss'
+  styleUrls: ['./blog-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BlogCardComponent {
-  @Input() blogEntry!: BlogEntryOverview;
+  @Input({ required: true }) blogEntry!: WritableSignal<BlogEntryOverview | null>;
+  @Input({ required: true }) selectedBlogId!: WritableSignal<number | null>;
 
   constructor(private router: Router) {}
 
@@ -42,7 +44,11 @@ export class BlogCardComponent {
     return 'assets/images/default_header_img.jpg';
   }
 
-  viewMore(id: number) {
-    this.router.navigate(['/blogs', id]);
+  viewMore(): void {
+    if (this.blogEntry()) {
+      const blogId = this.blogEntry()!.id;
+      this.selectedBlogId.set(blogId);
+      this.router.navigate(['/blogs', blogId]);
+    }
   }
 }

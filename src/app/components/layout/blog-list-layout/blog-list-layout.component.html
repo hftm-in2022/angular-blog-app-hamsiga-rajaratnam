@@ -1,10 +1,20 @@
-<div class="container" *ngIf="blogEntries && blogEntries.length > 0; else noEntries">
-  <div class="row flex-wrap blog-card-list-row" style="display: flex; flex-wrap: wrap">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let entry of blogEntries">
-      <app-blog-card [blogEntry]="entry"></app-blog-card>
+<div *ngIf="blogState.isLoading(); else content" class="loading-spinner">
+  <div class="spinner"></div>
+  <p>Loading...</p>
+</div>
+
+<ng-template #content>
+  <div class="container" *ngIf="blogSignals() && blogSignals().length > 0; else noEntries">
+    <div class="row flex-wrap blog-card-list-row" style="display: flex; flex-wrap: wrap">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let entrySignal of blogSignals()">
+        <app-blog-card
+          [blogEntry]="entrySignal"
+          [selectedBlogId]="blogState.selectedBlogId">
+        </app-blog-card>
+      </div>
     </div>
   </div>
-</div>
+</ng-template>
 
 <ng-template #noEntries>
   <div class="no-entries-container text-center">

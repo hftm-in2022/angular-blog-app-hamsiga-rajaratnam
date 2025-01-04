@@ -1,45 +1,24 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {BlogCardComponent} from "../../ui/blog-card/blog-card.component";
-import {CommonModule} from "@angular/common";
-import {BlogEntryOverview} from "../../../models/blog.model";
-import {BlogService} from "../../../services/blog.service";
+import { Component, OnInit, WritableSignal, signal, computed } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BlogCardComponent } from '../../ui/blog-card/blog-card.component';
+import { BlogState } from '../../../state/blog.state';
+import { BlogEntryOverview } from '../../../models/blog.model';
 
 @Component({
   selector: 'app-blog-list-layout',
   standalone: true,
-  imports: [
-    CommonModule,
-    BlogCardComponent
-  ],
+  imports: [CommonModule, BlogCardComponent],
   templateUrl: './blog-list-layout.component.html',
-  styleUrl: './blog-list-layout.component.scss'
+  styleUrls: ['./blog-list-layout.component.scss'],
 })
-export class BlogListLayoutComponent implements OnInit{
-  blogEntries: BlogEntryOverview[] = [];
-  totalCount: number = 0;
+export class BlogListLayoutComponent implements OnInit {
+  blogSignals = computed(() =>
+    this.blogState.blogEntries().map((entry) => signal(entry as BlogEntryOverview | null))
+  );
 
-  constructor(private blogService: BlogService) {}
+  constructor(public blogState: BlogState) {}
 
-  ngOnInit() {
-    this.fetchBlogEntries();
-  }
-
-  fetchBlogEntries(): void {
-    const updatedAfter = new Date('2024-10-29T15:25:09');
-    const searchString = 'done';
-
-    this.blogService.getBlogEntries().subscribe({
-      next: (response) => {
-        this.blogEntries = response.data;
-        this.totalCount = response.totalCount;
-        console.log("****************************************************");
-        console.log(this.blogEntries);
-        console.log(this.totalCount);
-        console.log("****************************************************");
-      },
-      error: (err) => {
-        console.error('Error fetching blog entries:', err);
-      }
-    });
+  ngOnInit(): void {
+    this.blogState.fetchBlogEntries(); // Fetch entries via BlogState
   }
 }

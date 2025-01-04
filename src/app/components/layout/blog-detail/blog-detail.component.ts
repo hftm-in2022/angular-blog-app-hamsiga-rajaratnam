@@ -1,40 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, WritableSignal, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogDetailOverView } from '../../../models/blog.model';
-import { DatePipe, NgIf } from '@angular/common';
+import {DatePipe, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-blog-detail',
   standalone: true,
+  templateUrl: './blog-detail.component.html',
+  styleUrls: ['./blog-detail.component.scss'],
   imports: [
     DatePipe,
     NgIf
-  ],
-  templateUrl: './blog-detail.component.html',
-  styleUrl: './blog-detail.component.scss'
+  ]
 })
-export class BlogDetailComponent implements OnInit {
-  blog: BlogDetailOverView | undefined;
+export class BlogDetailComponent {
+  blog: WritableSignal<BlogDetailOverView | null> = signal(null);
   loading = true;
-  error: string | undefined;
+  error: WritableSignal<string | null> = signal(null);
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.loadBlogDetails();
+  }
 
-  ngOnInit(): void {
+  loadBlogDetails(): void {
     const resolvedData = this.route.snapshot.data['blog'];
     if (resolvedData) {
-      this.blog = resolvedData;
+      this.blog.set(resolvedData);
       this.loading = false;
     } else {
-      this.error = 'Failed to load blog details.';
+      this.error.set('Failed to load blog details.');
       this.loading = false;
     }
   }
 
-  goBack() {
+  goBack(): void {
     this.router.navigate(['/blogs']);
   }
 }
