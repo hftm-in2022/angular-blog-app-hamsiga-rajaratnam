@@ -32,5 +32,5 @@ export interface BlogDetailOverView {
   likes: number;
   likedByMe: boolean;
   createdByMe: boolean;
-  comments: any[]; // Adjust this based on the structure of comments
+  comments: any[];
 }

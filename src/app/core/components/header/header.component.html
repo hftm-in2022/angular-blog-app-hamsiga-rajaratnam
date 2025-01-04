@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <!-- Logo -->
+  <span class="mat-toolbar-row">
+    <a routerLink="/" class="logo">IN305-Blog</a>
+  </span>
+
+  <span class="spacer"></span>
+
+  <!-- Navigation Links -->
+  <div class="nav-links" *ngIf="isAuthenticated; else guestLinks">
+    <span class="user-greeting">Welcome, {{ userEmail }}</span>
+    <a routerLink="/add-blog" routerLinkActive="active">Add Blog</a>
+    <button mat-button (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Guest Links -->
+  <ng-template #guestLinks>
+    <button mat-button class="login-button" (click)="login()">Login</button>
+  </ng-template>
+</mat-toolbar>

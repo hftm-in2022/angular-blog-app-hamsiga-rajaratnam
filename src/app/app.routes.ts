@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import {BlogResolver} from "./components/layout/blog-detail/resolvers/blog.resolver";
+import {BlogResolver} from "./features/blog/state/blog.resolver";
+import {isAuthenticatedGuard} from "./core/guards/is-authenticated.guard";
 export const routes: Routes = [
   {
     path: '',
@@ -7,18 +8,40 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'blogs',
+    path: 'login',
     loadComponent: () =>
-      import('./components/layout/blog-list-layout/blog-list-layout.component').then(
-        (c) => c.BlogListLayoutComponent
+      import('./core/components/login-page/login-page.component').then(
+        (c) => c.LoginPageComponent
+      ),
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./core/components/login-page/login-page.component').then(
+        (c) => c.LoginPageComponent
       ),
   },
   {
     path: 'blogs/:id',
     loadComponent: () =>
-      import('./components/layout/blog-detail/blog-detail.component').then(
+      import('./features/blog/components/blog-detail/blog-detail.component').then(
         (c) => c.BlogDetailComponent
       ),
     resolve: { blog: BlogResolver }
+  },
+  {
+    path: 'blogs',
+    loadComponent: () =>
+      import('./features/blog/components/blog-list-layout/blog-list-layout.component').then(
+        (c) => c.BlogListLayoutComponent
+      ),
+  },
+  {
+    path: 'add-blog',
+    loadComponent: () =>
+      import('./features/add-blog-page/add-blog-page.component').then(
+        (c) => c.AddBlogPageComponent
+      ),
+    canActivate: [isAuthenticatedGuard],
   },
 ];

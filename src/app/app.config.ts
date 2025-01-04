@@ -2,7 +2,7 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import {HTTP_INTERCEPTORS, provideHttpClient} from '@angular/common/http';
-import { loggingInterceptor } from './interceptors/logging.interceptor';
+import { loggingInterceptor } from './core/interceptors/logging.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [

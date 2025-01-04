@@ -1,6 +1,6 @@
 import { Injectable, signal, WritableSignal } from '@angular/core';
-import { BlogEntryOverview } from '../models/blog.model';
-import { BlogService } from '../services/blog.service';
+import { BlogEntryOverview } from '../../../models/blog.model';
+import { BlogService } from '../../../services/blog.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -19,8 +19,8 @@ export class BlogState {
     this.isLoading.set(true);
     this.blogService.getBlogEntries().subscribe({
       next: (response) => {
-        this.blogEntriesSubject.next(response.data); // Redux-like state update
-        this.blogEntries.set(response.data); // Reactive signal update
+        this.blogEntriesSubject.next(response.data);
+        this.blogEntries.set(response.data);
         this.isLoading.set(false);
       },
       error: (err) => {
