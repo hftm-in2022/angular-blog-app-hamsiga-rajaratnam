@@ -1,4 +1,4 @@
-import { Component, OnInit, WritableSignal, signal, computed } from '@angular/core';
+import {Component, OnInit, WritableSignal, signal, computed, ChangeDetectionStrategy} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlogCardComponent } from '../../ui/blog-card/blog-card.component';
 import { BlogState } from '../../../state/blog.state';
@@ -7,6 +7,7 @@ import { BlogEntryOverview } from '../../../models/blog.model';
 @Component({
   selector: 'app-blog-list-layout',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, BlogCardComponent],
   templateUrl: './blog-list-layout.component.html',
   styleUrls: ['./blog-list-layout.component.scss'],

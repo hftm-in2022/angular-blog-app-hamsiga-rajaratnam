@@ -1,4 +1,4 @@
-import { Component, WritableSignal, signal } from '@angular/core';
+import {Component, WritableSignal, signal, ChangeDetectionStrategy} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogDetailOverView } from '../../../models/blog.model';
 import {DatePipe, NgIf} from "@angular/common";
@@ -6,6 +6,7 @@ import {DatePipe, NgIf} from "@angular/common";
 @Component({
   selector: 'app-blog-detail',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.scss'],
   imports: [
