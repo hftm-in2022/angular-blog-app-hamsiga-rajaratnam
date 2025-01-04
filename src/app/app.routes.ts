@@ -21,4 +21,12 @@ export const routes: Routes = [
       ),
     resolve: { blog: BlogResolver }
   },
+
+  {
+    path: 'add-blog',
+    loadComponent: () =>
+      import('./features/add-blog-page/add-blog-page.component').then(
+        (c) => c.AddBlogPageComponent
+      ),
+  },
 ];
