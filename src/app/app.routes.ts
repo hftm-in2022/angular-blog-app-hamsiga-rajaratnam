@@ -15,6 +15,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/login-page/login-page.component').then(
+        (c) => c.LoginPageComponent
+      ),
+  },
+  {
     path: 'blogs/:id',
     loadComponent: () =>
       import('./features/blog/components/blog-detail/blog-detail.component').then(
@@ -35,5 +42,6 @@ export const routes: Routes = [
       import('./features/add-blog-page/add-blog-page.component').then(
         (c) => c.AddBlogPageComponent
       ),
+    canActivate: [isAuthenticatedGuard],
   },
 ];
