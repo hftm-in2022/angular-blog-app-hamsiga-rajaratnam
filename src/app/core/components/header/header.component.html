@@ -4,18 +4,17 @@
     <a routerLink="/" class="logo">IN305-Blog</a>
   </span>
 
-  <!-- Spacer to push content to the right -->
   <span class="spacer"></span>
 
   <!-- Navigation Links -->
   <div class="nav-links" *ngIf="isAuthenticated; else guestLinks">
     <span class="user-greeting">Welcome, {{ userEmail }}</span>
-    <button mat-button routerLink="/add-blog" routerLinkActive="active">Add Blog</button>
+    <a routerLink="/add-blog" routerLinkActive="active">Add Blog</a>
     <button mat-button (click)="logout()">Logout</button>
   </div>
 
   <!-- Guest Links -->
   <ng-template #guestLinks>
-    <button mat-button (click)="login()">Login</button>
+    <button mat-button class="login-button" (click)="login()">Login</button>
   </ng-template>
 </mat-toolbar>

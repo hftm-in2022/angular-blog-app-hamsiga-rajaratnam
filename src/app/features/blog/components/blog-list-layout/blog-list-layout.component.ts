@@ -20,6 +20,6 @@ export class BlogListLayoutComponent implements OnInit {
   constructor(public blogState: BlogState) {}
 
   ngOnInit(): void {
-    this.blogState.fetchBlogEntries(); // Fetch entries via BlogState
+    this.blogState.fetchBlogEntries();
   }
 }

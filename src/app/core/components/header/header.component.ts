@@ -46,11 +46,7 @@ export class HeaderComponent implements OnInit {
 
   logout(): void {
     this.oidcSecurityService.logoff().subscribe(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/']).then(r => {});
     });
-  }
-
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
   }
 }

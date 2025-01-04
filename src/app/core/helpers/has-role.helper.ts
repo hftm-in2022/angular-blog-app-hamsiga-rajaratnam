@@ -1,5 +1,4 @@
 import { UserDataResult } from 'angular-auth-oidc-client';
-import {$locationShim} from "@angular/common/upgrade";
 
 /**
  * Helper function to check if a user has a specific role.
