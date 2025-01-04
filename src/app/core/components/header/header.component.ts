@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.oidcSecurityService.checkAuth().subscribe((authResult) => {
+    this.oidcSecurityService.isAuthenticated$.subscribe((authResult) => {
       this.isAuthenticated = authResult.isAuthenticated;
       this.cdr.detectChanges();
     });
