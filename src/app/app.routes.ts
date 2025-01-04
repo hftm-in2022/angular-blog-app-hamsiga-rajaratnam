@@ -15,13 +15,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'blogs',
-    loadComponent: () =>
-      import('./features/blog/components/blog-list-layout/blog-list-layout.component').then(
-        (c) => c.BlogListLayoutComponent
-      ),
-  },
-  {
     path: 'blogs/:id',
     loadComponent: () =>
       import('./features/blog/components/blog-detail/blog-detail.component').then(
@@ -29,13 +22,18 @@ export const routes: Routes = [
       ),
     resolve: { blog: BlogResolver }
   },
-
+  {
+    path: 'blogs',
+    loadComponent: () =>
+      import('./features/blog/components/blog-list-layout/blog-list-layout.component').then(
+        (c) => c.BlogListLayoutComponent
+      ),
+  },
   {
     path: 'add-blog',
     loadComponent: () =>
       import('./features/add-blog-page/add-blog-page.component').then(
         (c) => c.AddBlogPageComponent
       ),
-    canActivate: [isAuthenticatedGuard]
   },
 ];

@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="mat-elevation-z4 toolbar">
+  <!-- Menu button for mobile -->
+  <button
+    mat-icon-button
+    aria-label="Menu"
+    class="menu-button"
+    [matMenuTriggerFor]="menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/blogs" routerLinkActive="active">Blogs</button>
+    <button
+      mat-menu-item
+      routerLink="/add-blog"
+      routerLinkActive="active"
+      *ngIf="isAuthenticated$ | async"
+    >
+      Add Blog
+    </button>
+    <button mat-menu-item (click)="login()" *ngIf="!(isAuthenticated$ | async)">
+      Login
+    </button>
+    <button mat-menu-item (click)="logout()" *ngIf="isAuthenticated$ | async">
+      Logout
+    </button>
+  </mat-menu>
+
+  <!-- Navigation items for larger screens -->
+  <div class="nav-items">
+    <a mat-button routerLink="/blogs" routerLinkActive="active">Blogs</a>
+    <a
+      mat-button
+      routerLink="/add-blog"
+      routerLinkActive="active"
+      *ngIf="isAuthenticated$ | async"
+    >
+      Add Blog
+    </a>
+    <button mat-button (click)="login()" *ngIf="!(isAuthenticated$ | async)">
+      Login
+    </button>
+    <button mat-button (click)="logout()" *ngIf="isAuthenticated$ | async">
+      Logout
+    </button>
+  </div>
+
+  <!-- App name on the right -->
+  <span class="spacer"></span>
+  <span class="app-name">IN305-Blog</span>
+</mat-toolbar>
