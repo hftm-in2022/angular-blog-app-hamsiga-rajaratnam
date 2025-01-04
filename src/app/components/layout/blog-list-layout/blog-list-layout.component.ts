@@ -1,45 +1,45 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {BlogCardComponent} from "../../ui/blog-card/blog-card.component";
-import {CommonModule} from "@angular/common";
-import {BlogEntryOverview} from "../../../models/blog.model";
-import {BlogService} from "../../../services/blog.service";
+import {Component, OnInit, signal, WritableSignal} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BlogCardComponent } from '../../ui/blog-card/blog-card.component';
+import { BlogService } from '../../../services/blog.service';
+import { BlogEntryOverview } from '../../../models/blog.model';
 
 @Component({
   selector: 'app-blog-list-layout',
   standalone: true,
   imports: [
     CommonModule,
-    BlogCardComponent
+    BlogCardComponent // Ensure BlogCardComponent is imported here
   ],
   templateUrl: './blog-list-layout.component.html',
-  styleUrl: './blog-list-layout.component.scss'
+  styleUrls: ['./blog-list-layout.component.scss']
 })
-export class BlogListLayoutComponent implements OnInit{
-  blogEntries: BlogEntryOverview[] = [];
-  totalCount: number = 0;
+export class BlogListLayoutComponent implements OnInit {
+  blogEntries: WritableSignal<BlogEntryOverview[]> = signal([]);
+  selectedBlogId: WritableSignal<number | null> = signal(null);
 
   constructor(private blogService: BlogService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.fetchBlogEntries();
   }
 
   fetchBlogEntries(): void {
-    const updatedAfter = new Date('2024-10-29T15:25:09');
-    const searchString = 'done';
-
     this.blogService.getBlogEntries().subscribe({
       next: (response) => {
-        this.blogEntries = response.data;
-        this.totalCount = response.totalCount;
-        console.log("****************************************************");
-        console.log(this.blogEntries);
-        console.log(this.totalCount);
-        console.log("****************************************************");
+        this.blogEntries.set(response.data); // Update the Signal
       },
       error: (err) => {
         console.error('Error fetching blog entries:', err);
       }
     });
   }
+
+  handleBlogClicked(blogId: number | null): void {
+    if (blogId !== null) {
+      console.log(`Blog clicked with ID: ${blogId}`);
+    }
+  }
+
+  protected readonly signal = signal;
 }
