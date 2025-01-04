@@ -1,8 +1,6 @@
 <div *ngIf="blogState.isLoading(); else content" class="loading-spinner">
-  <div class="spinner"></div>
-  <p>Loading...</p>
+  <img class="loading-gif" src="assets/images/loading_animation.gif" alt="Loading...">
 </div>
-
 <ng-template #content>
   <div class="container" *ngIf="blogSignals() && blogSignals().length > 0; else noEntries">
     <div class="row flex-wrap blog-card-list-row" style="display: flex; flex-wrap: wrap">
