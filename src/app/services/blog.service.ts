@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable, catchError, finalize, switchMap, tap, of } from 'rxjs';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { BlogEntryOverview, BlogPagedData, BlogDetailOverView, BlogPagedDataSchema, BlogDetailOverViewSchema } from '../models/blog.model';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
 })
 export class BlogService {
-  private readonly apiUrl = '/entries';
+  private readonly apiUrl = environment.apiUrl;
   private oidcSecurityService = inject(OidcSecurityService);
   blogs$ = new BehaviorSubject<BlogEntryOverview[]>([]);
   loading = signal(false);

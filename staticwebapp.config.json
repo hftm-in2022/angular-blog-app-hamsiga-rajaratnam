@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "route": "/entries/*",
+      "rewrite": "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries/*"
+    },
+    {
+      "route": "/entries",
+      "rewrite": "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries"
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html"
+    }
+  ],
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io;"
+  }
+}
