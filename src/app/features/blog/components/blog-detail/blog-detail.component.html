@@ -1,11 +1,24 @@
 <div class="blog-detail" *ngIf="!loading">
-  <h2>{{ blog()?.title }}</h2>
-  <p class="author">By: {{ blog()?.author }}</p>
-  <p class="date">Published on: {{ blog()?.createdAt | date }}</p>
-  <div class="content">
-    <p>{{ blog()?.content }}</p>
-  </div>
-  <button (click)="goBack()">Back to Overview</button>
+  <mat-card class="blog-detail-card">
+    <mat-card-header>
+      <mat-card-title class="blog-title">{{ blog()?.title }}</mat-card-title>
+    </mat-card-header>
+    <hr class="divider" />
+    <mat-card-content>
+      <div class="meta-info">
+        <span><mat-icon>person</mat-icon> {{ blog()?.author }}</span>
+        <span><mat-icon>calendar_today</mat-icon> {{ blog()?.createdAt | date }}</span>
+      </div>
+      <div class="content">
+        <p>{{ blog()?.content }}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon> Back to Overview
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 
 <div *ngIf="loading" class="loading">Loading...</div>
