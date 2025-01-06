@@ -1,5 +1,19 @@
 @import "assets/styles/variables.scss";
 
+
+@font-face {
+  font-family: 'Material Icons';
+  src: url('/assets/fonts/material-icon/material-icons.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-size: 24px;
+  line-height: 1;
+}
+
 /* Set the global font family */
 body {
   font-family: 'Nanum Gothic', sans-serif;
@@ -73,3 +87,4 @@ a {
 .mb-20 {
   margin-bottom: 20px;
 }
+
