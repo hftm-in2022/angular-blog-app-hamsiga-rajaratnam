@@ -1,20 +1,101 @@
-<mat-toolbar color="primary" class="mat-elevation-z4">
-  <!-- Logo -->
-  <span class="mat-toolbar-row">
-    <a routerLink="/" class="logo">IN305-Blog</a>
-  </span>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav for Mobile (Positioned on the Left) -->
+  <mat-sidenav
+    #sidenav
+    mode="over"
+    position="start"
+    class="sidenav"
+    (closed)="onSidenavClosed()"
+  >
+    <mat-nav-list>
+      <!-- Welcome User Greeting -->
+      <ng-container *ngIf="isAuthenticated">
+        <div class="user-greeting">
+          <mat-icon>account_circle</mat-icon>
+          <span>Welcome, {{ userEmail }}</span>
+        </div>
+      </ng-container>
 
-  <span class="spacer"></span>
+      <!-- Navigation Links -->
+      <a mat-list-item routerLink="/" (click)="closeSidenav()">
+        <mat-icon>home</mat-icon>
+        Home
+      </a>
+      <ng-container *ngIf="isAuthenticated">
+        <a mat-list-item routerLink="/add-blog" (click)="closeSidenav()">
+          <mat-icon>add_circle</mat-icon>
+          Add Blog
+        </a>
+      </ng-container>
+      <ng-container *ngIf="isAuthenticated; else guestLinks">
+        <a mat-list-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          Logout
+        </a>
+      </ng-container>
+      <ng-template #guestLinks>
+        <a mat-list-item (click)="login()">
+          <mat-icon>login</mat-icon>
+          Login
+        </a>
+      </ng-template>
+    </mat-nav-list>
+  </mat-sidenav>
 
-  <!-- Navigation Links -->
-  <div class="nav-links" *ngIf="isAuthenticated; else guestLinks">
-    <span class="user-greeting">Welcome, {{ userEmail }}</span>
-    <a routerLink="/add-blog" routerLinkActive="active">Add Blog</a>
-    <button mat-button (click)="logout()">Logout</button>
-  </div>
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z4">
+      <!-- Menu Button for Mobile -->
+      <button
+        mat-icon-button
+        aria-label="Menu"
+        *ngIf="isMobile"
+        (click)="toggleSidenav()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
 
-  <!-- Guest Links -->
-  <ng-template #guestLinks>
-    <button mat-button class="login-button" (click)="login()">Login</button>
-  </ng-template>
-</mat-toolbar>
+      <!-- Logo -->
+      <span class="logo">
+        <a routerLink="/">IN305-Blog</a>
+      </span>
+
+      <span class="spacer"></span>
+
+      <!-- Navigation Links for Desktop -->
+      <div class="nav-links" *ngIf="!isMobile">
+        <ng-container *ngIf="isAuthenticated">
+          <span class="user-greeting">
+            <mat-icon>account_circle</mat-icon>
+            Welcome, {{ userEmail }}
+          </span>
+        </ng-container>
+        <a routerLink="/" routerLinkActive="active">
+          <mat-icon>home</mat-icon>
+          Home
+        </a>
+        <ng-container *ngIf="isAuthenticated">
+          <a routerLink="/add-blog" routerLinkActive="active">
+            <mat-icon>add_circle</mat-icon>
+            Add Blog
+          </a>
+        </ng-container>
+        <ng-container *ngIf="isAuthenticated; else desktopGuestLinks">
+          <button mat-button (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            Logout
+          </button>
+        </ng-container>
+        <ng-template #desktopGuestLinks>
+          <button mat-button (click)="login()">
+            <mat-icon>login</mat-icon>
+            Login
+          </button>
+        </ng-template>
+      </div>
+    </mat-toolbar>
+
+    <!-- Router Content -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
