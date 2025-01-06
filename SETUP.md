@@ -2,6 +2,13 @@
 
 This document provides a detailed guide to set up the Angular Blog App development environment. Follow the steps below to ensure all technical prerequisites are met for efficient and secure work in subsequent iterations.
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org) (version 16 or later recommended)
+- [Angular CLI](https://angular.io/cli) (latest version)
+- A GitHub account with access to the organization `hftm-in2022`.
+- An Azure account for deployment.
+
 ## 1. Create a New Angular Project
 
 - Use the Angular CLI to create a new project with SCSS as the CSS preprocessor:
