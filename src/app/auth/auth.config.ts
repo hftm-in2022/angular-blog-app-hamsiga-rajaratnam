@@ -1,8 +1,9 @@
 import { PassedInitialConfig } from 'angular-auth-oidc-client';
+import {environment} from "../../environments/environment";
 
 export const authConfig: PassedInitialConfig = {
   config: {
-    authority: 'https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io/realms/blog',
+    authority: `${environment.authUrl}/realms/blog`,
     redirectUrl: window.location.origin,
     postLogoutRedirectUri: window.location.origin,
     clientId: 'spa-blog',
