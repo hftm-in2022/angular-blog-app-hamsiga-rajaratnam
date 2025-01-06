@@ -17,24 +17,24 @@
       </ng-container>
 
       <!-- Navigation Links -->
-      <a mat-list-item routerLink="/" (click)="closeSidenav()">
+      <a routerLink="/" (click)="closeSidenav()">
         <mat-icon>home</mat-icon>
         Home
       </a>
       <ng-container *ngIf="isAuthenticated">
-        <a mat-list-item routerLink="/add-blog" (click)="closeSidenav()">
+        <a routerLink="/add-blog" (click)="closeSidenav()">
           <mat-icon>add_circle</mat-icon>
           Add Blog
         </a>
       </ng-container>
       <ng-container *ngIf="isAuthenticated; else guestLinks">
-        <a mat-list-item (click)="logout()">
+        <a (click)="logout()">
           <mat-icon>logout</mat-icon>
           Logout
         </a>
       </ng-container>
       <ng-template #guestLinks>
-        <a mat-list-item (click)="login()">
+        <a (click)="login()">
           <mat-icon>login</mat-icon>
           Login
         </a>
