@@ -49,6 +49,9 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    component: ErrorPageComponent
+    loadComponent: () =>
+      import('./features/error-page/error-page.component').then(
+        (c) => c.ErrorPageComponent
+      ),
   },
 ];
