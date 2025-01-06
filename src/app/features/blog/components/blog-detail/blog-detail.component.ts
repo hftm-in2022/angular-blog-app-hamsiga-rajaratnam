@@ -2,6 +2,9 @@ import {Component, WritableSignal, signal, ChangeDetectionStrategy} from '@angul
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogDetailOverView } from '../../../../models/blog.model';
 import {DatePipe, NgIf} from "@angular/common";
+import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
+import {MatIcon} from "@angular/material/icon";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-blog-detail',
@@ -11,7 +14,14 @@ import {DatePipe, NgIf} from "@angular/common";
   styleUrls: ['./blog-detail.component.scss'],
   imports: [
     DatePipe,
-    NgIf
+    NgIf,
+    MatCard,
+    MatCardHeader,
+    MatCardContent,
+    MatIcon,
+    MatCardActions,
+    MatButton,
+    MatCardTitle
   ]
 })
 export class BlogDetailComponent {

@@ -5,6 +5,11 @@
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   margin: 10px;
   width: 400px;
+  border: 1px solid grey;
+  border-radius: 15px; // Add rounded corners
+  overflow: hidden; // Ensures child elements like images respect the border-radius
+  background-color: white; // Ensure a consistent background for the card
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow
 
   // Hover effect
   &:hover {
@@ -20,10 +25,68 @@
     text-overflow: ellipsis;
     width: 370px;
     font-size: 20px;
-    color: #715059;
+    font-weight: 600;
+    color: darkred;
   }
 
   .blog-card-img {
     object-fit: cover;
+    height: 200px;
+    width: 100%;
+    border-bottom: 1px solid #ddd; // Subtle separator between image and content
+  }
+
+  mat-card-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd; // Subtle separator for header
+  }
+
+  mat-card-subtitle {
+    font-size: 14px;
+    color: gray; // Subtle text color for subtitle
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    i {
+      color: #6c757d; // Icon color
+    }
+  }
+
+  mat-card-content {
+    padding: 15px;
+    font-size: 14px;
+    color: #555;
+
+    div {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      font-size: 16px;
+
+      i {
+        color: darkred; // Icon color
+      }
+    }
+  }
+
+  mat-card-actions {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+
+    .button--primary {
+      color: white;
+      background-color: darkred;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 4px;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: #a11515; // Darker red on hover
+      }
+    }
   }
 }

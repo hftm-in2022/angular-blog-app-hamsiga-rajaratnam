@@ -1,36 +1,52 @@
-// created based on the api response
-export interface BlogEntryOverview {
-  id: number;
-  title: string;
-  contentPreview: string;
-  author: string;
-  likes: number;
-  comments: number;
-  likedByMe: boolean;
-  createdByMe: boolean;
-  createdAt: string;
-  updatedAt: string;
-  headerImageUrl?: string;
-}
+import { z } from 'zod';
 
-export interface BlogPagedData {
-  data: BlogEntryOverview[];
-  pageIndex: number;
-  pageSize: number;
-  totalCount: number;
-  maxPageSize: number;
-}
+// Zod Schema for BlogEntryOverview
+export const BlogEntryOverviewSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  contentPreview: z.string(),
+  author: z.string(),
+  likes: z.number(),
+  comments: z.number(),
+  likedByMe: z.boolean(),
+  createdByMe: z.boolean(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
+  headerImageUrl: z.string().optional(),
+});
 
-export interface BlogDetailOverView {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-  createdAt: string;
-  updatedAt: string;
-  headerImageUrl: string;
-  likes: number;
-  likedByMe: boolean;
-  createdByMe: boolean;
-  comments: any[];
-}
+export const BlogPagedDataSchema = z.object({
+  data: z.array(BlogEntryOverviewSchema),
+  pageIndex: z.number(),
+  pageSize: z.number(),
+  totalCount: z.number(),
+  maxPageSize: z.number(),
+});
+
+// Zod Schema for BlogDetailOverview
+export const BlogDetailOverViewSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  content: z.string(),
+  author: z.string(),
+  likes: z.number(),
+  likedByMe: z.boolean(),
+  createdByMe: z.boolean(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
+  headerImageUrl: z.string().optional(),
+  comments: z.array(
+    z.object({
+      id: z.number(),
+      content: z.string(),
+      author: z.string(),
+      createdAt: z.string(),
+      updatedAt: z.string(),
+    })
+  ),
+});
+
+// Types inferred from Zod schemas
+export type BlogEntryOverview = z.infer<typeof BlogEntryOverviewSchema>;
+export type BlogPagedData = z.infer<typeof BlogPagedDataSchema>;
+export type BlogDetailOverView = z.infer<typeof BlogDetailOverViewSchema>;
