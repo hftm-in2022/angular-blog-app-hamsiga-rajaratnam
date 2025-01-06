@@ -3,15 +3,16 @@
     <mat-card-header>
       <mat-card-title class="blog-title">{{ blog()?.title }}</mat-card-title>
     </mat-card-header>
-    <hr class="divider" />
     <mat-card-content>
       <div class="meta-info">
         <span><mat-icon>person</mat-icon> {{ blog()?.author }}</span>
         <span><mat-icon>calendar_today</mat-icon> {{ blog()?.createdAt | date }}</span>
       </div>
+      <hr class="divider" />
       <div class="content">
         <p>{{ blog()?.content }}</p>
       </div>
+      <hr class="divider" />
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="warn" (click)="goBack()">
