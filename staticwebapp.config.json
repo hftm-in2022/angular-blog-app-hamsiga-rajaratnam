@@ -1,4 +1,8 @@
 {
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/entries","/entries/*", "/auth/*"]
+  },
   "routes": [
     {
       "route": "/entries/*",
@@ -11,10 +15,6 @@
     {
       "route": "/auth/*",
       "rewrite": "https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io/*"
-    },
-    {
-      "route": "/*",
-      "rewrite": "/index.html"
     }
   ],
   "globalHeaders": {

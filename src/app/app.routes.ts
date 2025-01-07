@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import {BlogResolver} from "./features/blog/state/blog.resolver";
-import {isAuthenticatedGuard} from "./core/guards/is-authenticated.guard";
+import { BlogResolver } from './features/blog/state/blog.resolver';
+import { isAuthenticatedGuard } from './core/guards/is-authenticated.guard';
+
 export const routes: Routes = [
   {
     path: '',
@@ -22,7 +23,7 @@ export const routes: Routes = [
       import('./features/blog/components/blog-detail/blog-detail.component').then(
         (c) => c.BlogDetailComponent
       ),
-    resolve: { blog: BlogResolver }
+    resolve: { blog: BlogResolver },
   },
   {
     path: 'blogs',
@@ -40,7 +41,7 @@ export const routes: Routes = [
     canActivate: [isAuthenticatedGuard],
   },
   {
-    path: '**',
+    path: '**', // Catch-all route
     loadComponent: () =>
       import('./features/error-page/error-page.component').then(
         (c) => c.ErrorPageComponent
