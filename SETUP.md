@@ -102,3 +102,73 @@ Reference Video: https://www.youtube.com/watch?v=1vqJ1_AAcUg&themeRefresh=1
 - Use tools like Dependabot to ensure the project is always on the latest stable versions of NPM packages.
   Reference Video: https://www.youtube.com/watch?v=1vqJ1_AAcUg&themeRefresh=1
 
+## 7. Static Web App Configuration
+
+The `staticwebapp.config.json` file is critical for configuring routing, fallback rules, authentication, and global headers in Azure Static Web Apps. Follow these steps to ensure proper deployment:
+
+### 1. Location in Development
+- Place the `staticwebapp.config.json` file in the **project root directory** for development purposes.
+
+### 2. Inclusion in Production Build
+- During the production build (`ng build --configuration production`), the `staticwebapp.config.json` file should be copied to the **output directory** (`dist/blog-app/browser`) for deployment.
+- Automate this step by adding the following to your `angular.json` under `assets`:
+  ```json
+  "assets": [
+    "src/favicon.ico",
+    "src/assets",
+    "staticwebapp.config.json"
+  ]
+  ```
+
+  ### 3. Configuration Details
+
+Ensure the following configuration is present in your staticwebapp.config.json:
+ ```json
+  {
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/entries", "/entries/*", "/auth/*"]
+  },
+  "routes": [
+    {
+      "route": "/entries/*",
+      "rewrite": "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries/*"
+    },
+    {
+      "route": "/entries",
+      "rewrite": "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries"
+    },
+    {
+      "route": "/auth/*",
+      "rewrite": "https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io/*"
+    }
+  ],
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io;"
+  }
+}
+  ```
+
+### 4. Key Elements in the Configuration
+
+- **navigationFallback**:  
+  Ensures that the application serves `index.html` for routes that rely on client-side routing, while excluding API and authentication endpoints.
+
+- **routes**:  
+  - Maps API and authentication requests to their respective backend services.  
+  - Wildcard patterns (`*`) ensure all related paths are correctly routed.
+
+- **globalHeaders**:  
+  - Sets security policies and enables resources like fonts and styles to load correctly.  
+  - Example: `Content-Security-Policy` ensures secure communication with allowed origins.
+
+---
+
+### 5. Validation
+
+- **Verify the Build Output**:  
+  After the build, confirm that the `staticwebapp.config.json` file exists in the `dist/blog-app/browser` directory.
+
+- **Test Deployment**:  
+  - Ensure API calls (`/entries`, `/entries/*`, `/auth/*`) are routed correctly.  
+  - Validate that client-side routing works as expected for all application paths.
