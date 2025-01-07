@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import {BlogResolver} from "./features/blog/state/blog.resolver";
 import {isAuthenticatedGuard} from "./core/guards/is-authenticated.guard";
-import {ErrorPageComponent} from "./features/error-page/error-page.component";
 export const routes: Routes = [
   {
     path: '',
