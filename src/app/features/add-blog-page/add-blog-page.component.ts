@@ -55,7 +55,7 @@ export class AddBlogPageComponent {
       this.blogService.savePost(newBlog).subscribe({
         next: () => {
           this.isLoading.set(false);
-          this.router.navigate(['/']); // Redirect to home
+          this.router.navigate(['/']).then(r => {}); // Redirect to home
         },
         error: (err) => {
           this.isLoading.set(false);
