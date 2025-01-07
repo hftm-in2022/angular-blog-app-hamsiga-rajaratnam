@@ -81,19 +81,28 @@ export class BlogService {
   /**
    * Save a new blog post.
    */
+  /**
+   * Save a new blog post.
+   */
   savePost(blog: {
     title: string;
     content: string;
     headerImageUrl?: string;
-  }): Observable<BlogDetailOverView> {
+  }): Observable<BlogDetailOverView | null> {
     return this.oidcSecurityService.getAccessToken().pipe(
       switchMap((token) => {
         const headers = new HttpHeaders({
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         });
-        return this.http.post<unknown>(this.apiUrl, blog, { headers }).pipe(
+
+        return this.http.post<unknown | null>(this.apiUrl, blog, { headers }).pipe(
           switchMap((data) => {
+            if (data === null) {
+              console.warn('API returned null for savePost');
+              return of(null); // Return null explicitly when the API responds with null
+            }
+
             const parsed = BlogDetailOverViewSchema.safeParse(data);
             if (parsed.success) {
               return of(parsed.data);
