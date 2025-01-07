@@ -103,8 +103,12 @@ This project is integrated with GitHub Actions for continuous integration and de
 
 ## Deployment
 
-The application is automatically deployed to Azure Static Web Apps. You can access the live application at Azure Deployment Link.
-https://black-mushroom-0c0e39010.5.azurestaticapps.net/
+The application is automatically deployed to Azure Static Web Apps. You can access the live application at [Azure Deployment Link](https://black-mushroom-0c0e39010.5.azurestaticapps.net/).
+
+### Static Web App Configuration
+The `staticwebapp.config.json` file is used to define routes, fallback rules, and security policies for Azure Static Web Apps. This file is located in the build output folder (`dist/blog-app/browser`) and ensures proper routing and authentication flow in production.
+
+Refer to [Azure Static Web App Configuration Documentation](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration) for more details.
 
 ## Known Issues/Future Enhancements
 
