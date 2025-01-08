@@ -3,8 +3,9 @@
 .blog-card {
   position: relative;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 350px;
+  min-width: 270px;
   margin: 10px;
-  width: 400px;
   border: 1px solid grey;
   border-radius: 15px; // Add rounded corners
   overflow: hidden; // Ensures child elements like images respect the border-radius
@@ -15,7 +16,6 @@
   &:hover, &:active, &:focus {
     transform: translateY(-5px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    background-color: #f8f9fa; // Light background on hover
   }
 
   .blog-card-title {
@@ -26,30 +26,30 @@
     width: 370px;
     font-size: 20px;
     font-weight: 600;
-    color: darkred;
+    color: $primary-color;
   }
 
   .blog-card-img {
     object-fit: cover;
     height: 200px;
     width: 100%;
-    border-bottom: 1px solid #ddd; // Subtle separator between image and content
+    border-bottom: 1px solid #ddd;
   }
 
   mat-card-header {
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd; // Subtle separator for header
+    border-bottom: 1px solid #ddd;
   }
 
   mat-card-subtitle {
     font-size: 14px;
-    color: gray; // Subtle text color for subtitle
+    color: gray;
     display: flex;
     align-items: center;
     gap: 5px;
 
     mat-icon {
-      color: #6c757d; // Icon color
+      color: #6c757d;
     }
   }
 
@@ -65,7 +65,7 @@
       font-size: 16px;
 
       i {
-        color: darkred; // Icon color
+        color: $primary-color;
       }
     }
   }
@@ -75,18 +75,5 @@
     display: flex;
     justify-content: flex-end;
 
-    .button--primary {
-      color: white;
-      background-color: darkred;
-      padding: 8px 16px;
-      font-size: 14px;
-      font-weight: bold;
-      border-radius: 4px;
-      text-transform: capitalize;
-
-      &:hover, &:active, &:focus {
-        background-color: #a11515; // Darker red on hover
-      }
-    }
   }
 }

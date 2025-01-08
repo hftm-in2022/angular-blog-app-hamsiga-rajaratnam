@@ -24,6 +24,11 @@ body {
   width: 100%;
 }
 
+h1 {
+  color: $primary-color;
+  font-size: 24px;
+}
+
 /* Optional: Apply styles for all elements */
 * {
   box-sizing: inherit;
@@ -60,12 +65,12 @@ a {
   }
 
   &--secondary {
-    background-color: $secondary-color;
-    color: $text-color-secondary;
+    background-color: $secondary-color !important;
+    color: $text-color-secondary !important;
     border-radius: 5px !important;
 
     &:hover, &:active, &:focus {
-      background-color: $text-color-secondary;
+      background-color: $text-color-secondary !important;
       border: 1px solid $secondary-color !important;
       color: $secondary-color !important;
     }
