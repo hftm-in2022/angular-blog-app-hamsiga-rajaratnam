@@ -1,5 +1,7 @@
+@import '../../../assets/styles/variables.scss';
+
 .add-blog-container {
-  max-width: 600px;
+  max-width: 85%;
   margin: 0 auto;
   padding: 20px;
 
@@ -12,7 +14,7 @@
 
   .form-title {
     text-align: center;
-    color: darkred;
+    color: $primary-color;
     font-size: 1.8rem;
     margin-bottom: 20px;
   }
@@ -49,24 +51,12 @@
     justify-content: space-between;
 
     .btn {
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
       cursor: pointer;
 
-      &.btn-primary {
-        background-color: darkred;
-        color: white;
-      }
-
-      &.btn-secondary {
-        background-color: #6c757d;
-        color: white;
-      }
-
       &:disabled {
-        background-color: grey;
+        background-color: grey !important;
+        color: white !important;
+        border-color: grey !important;
         cursor: not-allowed;
       }
     }
@@ -75,15 +65,5 @@
   .back-to-overview {
     text-align: center;
     margin-top: 20px;
-
-    .back-link {
-      text-decoration: none;
-      color: darkred;
-      font-weight: bold;
-
-      &:hover, &:active, &:focus {
-        text-decoration: underline;
-      }
-    }
   }
 }

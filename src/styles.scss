@@ -38,6 +38,7 @@ h1 {
 a {
   color: $link-color;
   transition: color 0.3s;
+  text-decoration: none;
 
   &:hover, &:active, &:focus {
     color: $hover-color;
