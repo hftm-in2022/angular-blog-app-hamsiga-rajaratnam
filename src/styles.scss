@@ -1,6 +1,6 @@
 @import "assets/styles/variables.scss";
 
-
+/* adding material icons*/
 @font-face {
   font-family: 'Material Icons';
   src: url('/assets/fonts/material-icon/material-icons.woff2') format('woff2');
@@ -14,12 +14,19 @@
   line-height: 1;
 }
 
-/* Set the global font family */
 body {
   font-family: 'Nanum Gothic', sans-serif;
   background-color: $background-color;
-  color: $text-color;
-  box-sizing: border-box; /* Use border-box model */
+  color: $text-color-primary;
+  box-sizing: border-box;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  color: $primary-color;
+  font-size: 24px;
 }
 
 /* Optional: Apply styles for all elements */
@@ -27,52 +34,49 @@ body {
   box-sizing: inherit;
 }
 
-// Links
+// Global Link style
 a {
   color: $link-color;
   transition: color 0.3s;
+  text-decoration: none;
 
-  &:hover {
+  &:hover, &:active, &:focus {
     color: $hover-color;
   }
 }
 
-// Buttons
 .button {
-  padding: 10px 20px;
+  padding: 10px 30px !important;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
   transition: background-color 0.3s;
 
   &--primary {
     background-color: $primary-color !important;
     color: #FFFFFF !important;
-    padding: 10px !important;
     border-radius: 5px !important;
 
-    &:hover {
-      background-color: darken($primary-color, 10%);
+    &:hover, &:active, &:focus {
+      background-color: $background-color !important;
+      border: 1px solid $primary-color !important;
+      color: $primary-color !important;
     }
   }
 
   &--secondary {
-    background-color: $secondary-color;
-    color: #FFFFFF;
+    background-color: $secondary-color !important;
+    color: $text-color-secondary !important;
+    border-radius: 5px !important;
 
-    &:hover {
-      background-color: darken($secondary-color, 10%);
+    &:hover, &:active, &:focus {
+      background-color: $text-color-secondary !important;
+      border: 1px solid $secondary-color !important;
+      color: $secondary-color !important;
     }
   }
-}
 
-// Card Styles
-.card {
-  background-color: $card-background-color;
-  border: 1px solid $primary-color;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 8px;
 }
 
 // Utility Classes

@@ -1,6 +1,8 @@
+<div class="blog-list-container">
 <h1>Blogs</h1>
 <div *ngIf="blogState.isLoading(); else content" class="loading-spinner">
   <img class="loading-gif" src="../../../../../assets/images/loading_animation.gif" alt="Loading...">
+</div>
 </div>
 <ng-template #content>
   <div class="container" *ngIf="blogSignals() && blogSignals().length > 0; else noEntries">
@@ -18,6 +20,6 @@
 <ng-template #noEntries>
   <div class="no-entries-container text-center">
     <img src="../../../../../assets/images/no_data.jpg" alt="No blog entries" class="no-entries-image" />
-    <p>No blog entries available.</p>
+    <p>No blog entries available</p>
   </div>
 </ng-template>
