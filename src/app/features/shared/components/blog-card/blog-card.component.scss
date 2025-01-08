@@ -4,13 +4,17 @@
   position: relative;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   width: 350px;
-  min-width: 270px;
   margin: 10px;
   border: 1px solid grey;
   border-radius: 15px; // Add rounded corners
   overflow: hidden; // Ensures child elements like images respect the border-radius
   background-color: white; // Ensure a consistent background for the card
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow
+
+  @media (max-width: 400px) {
+    width: 80%;
+    margin: 1%;
+  }
 
   // Hover effect
   &:hover, &:active, &:focus {
@@ -23,7 +27,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 370px;
+    width: 300px;
     font-size: 20px;
     font-weight: 600;
     color: $primary-color;
