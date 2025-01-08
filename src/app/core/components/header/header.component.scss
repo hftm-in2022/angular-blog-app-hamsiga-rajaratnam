@@ -1,10 +1,12 @@
+@import "../../../../assets/styles/variables.scss";
+
 .sidenav-container {
   height: 100%;
 
   .sidenav {
-    width: 250px;
-    background-color: darkred; /* Sidebar background color */
-    color: white;
+    width: 280px;
+    background-color: $primary-color;
+    color: $text-color-secondary;
 
     mat-nav-list {
       display: flex;
@@ -16,23 +18,23 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        color: white;
+        color: $text-color-secondary;
         padding: 10px 15px;
         border-radius: 4px;
         text-decoration: none;
 
-        &:hover {
-          background-color: white;
-          color: darkred;
+        &:hover, &:active, &:focus {
+          background-color: $background-color;
+          color: $primary-color;
           opacity: 0.9;
 
           mat-icon {
-            color: darkred; /* Change icon color to red on hover */
+            color: $primary-color;
           }
         }
 
         mat-icon {
-          color: white;
+          color: $text-color-secondary;
         }
       }
 
@@ -45,7 +47,7 @@
         margin-bottom: 20px;
 
         mat-icon {
-          color: white;
+          color: $text-color-secondary;
         }
       }
     }
@@ -56,16 +58,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: darkred;
-  color: white;
-  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $text-color-secondary;
+  padding: 20px;
 
   .mat-icon-button {
     margin-right: 10px;
-    color: white;
+    color: $text-color-secondary;
 
-    &:hover {
-      color: darkred;
+    &:hover, &:active, &:focus {
+      color: $primary-color;
     }
   }
 
@@ -74,13 +76,13 @@
     font-weight: bold;
     margin-left: 10px;
     text-decoration: none;
-    color: white;
+    color: $text-color-secondary;
     padding: 5px 10px;
     border-radius: 4px;
 
-    &:hover {
-      background-color: white;
-      color: darkred;
+    &:hover, &:active, &:focus {
+      background-color: $background-color;
+      color: $primary-color;
       opacity: 0.9;
     }
   }
@@ -99,23 +101,23 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      color: white;
+      color: $text-color-secondary;
       text-decoration: none;
       padding: 5px 10px;
       border-radius: 4px;
 
-      &:hover {
-        background-color: white;
-        color: darkred;
+      &:hover, &:active, &:focus {
+        background-color: $background-color;
+        color: $primary-color;
         opacity: 0.9;
 
         mat-icon {
-          color: darkred; /* Change icon color to red on hover */
+          color: $primary-color;
         }
       }
 
       mat-icon {
-        color: white;
+        color: $text-color-secondary;
       }
     }
 
@@ -127,7 +129,7 @@
       font-weight: 500;
 
       mat-icon {
-        color: white;
+        color: $text-color-secondary;
       }
     }
   }

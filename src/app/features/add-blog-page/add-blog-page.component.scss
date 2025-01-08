@@ -81,7 +81,7 @@
       color: darkred;
       font-weight: bold;
 
-      &:hover {
+      &:hover, &:active, &:focus {
         text-decoration: underline;
       }
     }

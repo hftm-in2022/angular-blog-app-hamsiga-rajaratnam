@@ -1,15 +1,13 @@
 <div class="login-page-container">
   <div class="content" *ngIf="!isLoggedIn(); else loggedInTemplate">
-
     <div class="logged-in-container">
       <img src="assets/images/login.svg" alt="Login Illustration" class="login-image" />
       <div class="button-container">
-        <button mat-raised-button color="primary" (click)="login()" class="login-btn">
+        <button mat-raised-button (click)="login()" class="button button--primary login-btn">
           Login
         </button>
       </div>
     </div>
-
   </div>
 
   <ng-template #loggedInTemplate>
@@ -17,10 +15,10 @@
       <img src="assets/images/user-logged-in.svg" alt="Logged In Illustration" class="login-image" />
       <p>You are already logged in. What would you like to do?</p>
       <div class="button-container">
-        <button mat-raised-button color="accent" class="login-btn" (click)="logout()">
+        <button mat-raised-button class="button button--primary login-btn" (click)="logout()">
           <mat-icon>logout</mat-icon> Logout
         </button>
-        <button mat-raised-button color="primary" class="login-btn" (click)="goToHome()">
+        <button mat-raised-button class="button button--primary login-btn" (click)="goToHome()">
           <mat-icon>arrow_back</mat-icon> Back to Home
         </button>
       </div>

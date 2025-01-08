@@ -70,7 +70,7 @@
           color: white;
         }
 
-        &:hover {
+        &:hover, &:active, &:focus {
           background-color: #a11515; // Darker red on hover
         }
       }
