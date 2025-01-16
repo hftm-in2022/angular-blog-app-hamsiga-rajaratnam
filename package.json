@@ -8,9 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:headless": "ng test --browsers=ChromeHeadless",
-    "test:jest": "jest",
-    "test:watch": "jest --watch",
-    "test:ci": "jest --ci --coverage",
     "lint": "ng lint",
     "format": "npx prettier --write ./src/app/*",
     "prepare": "husky"

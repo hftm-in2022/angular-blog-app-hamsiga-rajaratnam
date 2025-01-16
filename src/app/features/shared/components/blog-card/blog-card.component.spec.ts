@@ -98,4 +98,19 @@ describe('BlogCardComponent', () => {
       console.error(validationResult.error);
     }
   });
+
+  it('should handle @Input for blogEntry correctly', () => {
+    expect(component.blogEntry).toBe(mockBlogEntry);
+    expect(component.blogEntry()?.title).toBe('Test Blog');
+  });
+
+  it('should handle @Input for selectedBlogId correctly', () => {
+    expect(component.selectedBlogId).toBe(mockSelectedBlogId);
+    expect(component.selectedBlogId()).toBeNull();
+  });
+
+  it('should apply the correct CSS classes', () => {
+    const cardElement = fixture.debugElement.query(By.css('mat-card')).nativeElement;
+    expect(cardElement.classList).toContain('blog-card');
+  });
 });
