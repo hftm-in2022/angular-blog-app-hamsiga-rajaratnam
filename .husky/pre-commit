@@ -1,1 +1,6 @@
-npx --no-install lint-staged
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Add debugging information
+echo "Node version: $(node -v)"
+echo "Running commitlint..."
