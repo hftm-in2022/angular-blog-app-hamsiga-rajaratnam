@@ -8,6 +8,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {NgIf} from "@angular/common";
 import {TranslatePipe} from "@ngx-translate/core";
+import {
+  LanguageSwitcherComponent
+} from "../../../features/shared/components/language-switcher/language-switcher.component";
 
 @Component({
   selector: 'app-header',
@@ -28,6 +31,7 @@ import {TranslatePipe} from "@ngx-translate/core";
     NgIf,
     RouterOutlet,
     TranslatePipe,
+    LanguageSwitcherComponent,
   ],
 })
 export class HeaderComponent implements OnInit {
