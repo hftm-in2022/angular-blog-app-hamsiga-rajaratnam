@@ -1,0 +1,52 @@
+{
+  "HEADER": {
+    "WELCOME_USER": "Willkommen, {{ userEmail }}",
+    "HOME": "Startseite",
+    "ADD_BLOG": "Blog hinzufügen",
+    "LOGOUT": "Abmelden",
+    "LOGIN": "Anmelden"
+  },
+  "BLOG_DETAIL": {
+    "AUTHOR": "Autor",
+    "DATE": "Erstellt am",
+    "CONTENT": "Inhalt",
+    "BACK_TO_OVERVIEW": "Zurück zur Übersicht",
+    "LOADING": "Lädt...",
+    "ERROR": "Fehler: {{ error }}"
+  },
+  "BLOG_LIST": {
+    "TITLE": "Blogs",
+    "NO_ENTRIES": "Keine Blogeinträge verfügbar"
+  },
+  "ERROR_PAGE": {
+    "TITLE": "Oops! Etwas ist schief gelaufen.",
+    "MESSAGE": "Die Seite, die Sie suchen, existiert nicht oder es ist ein Fehler aufgetreten.",
+    "GO_HOME": "Zurück zur Startseite"
+  },
+  "BLOG_CARD": {
+    "LIKES": "Gefällt mir",
+    "COMMENTS": "Kommentare",
+    "VIEW_MORE": "Mehr anzeigen"
+  },
+  "LOGIN_PAGE": {
+    "TITLE": "Login",
+    "LOGGED_IN_MESSAGE": "Sie sind bereits angemeldet. Was möchten Sie tun?",
+    "LOGOUT": "Abmelden",
+    "BACK_HOME": "Zurück zur Startseite"
+  },
+  "ADD_BLOG": {
+    "TITLE": "Neuen Blog hinzufügen",
+    "BLOG_TITLE": "Blog-Titel *",
+    "BLOG_TITLE_PLACEHOLDER": "Geben Sie den Blog-Titel ein",
+    "BLOG_TITLE_REQUIRED": "Titel ist erforderlich.",
+    "BLOG_TITLE_MINLENGTH": "Titel muss mindestens 5 Zeichen lang sein.",
+    "BLOG_CONTENT": "Blog-Inhalt *",
+    "BLOG_CONTENT_PLACEHOLDER": "Schreiben Sie hier Ihren Blog-Inhalt",
+    "BLOG_CONTENT_REQUIRED": "Inhalt ist erforderlich.",
+    "BLOG_CONTENT_MINLENGTH": "Inhalt muss mindestens 10 Zeichen lang sein.",
+    "IMAGE_URL": "Bild-URL (Optional)",
+    "SAVE_BLOG": "Blog speichern",
+    "REFRESH": "Aktualisieren",
+    "BACK_TO_ALL_BLOGS": "← Zurück zu allen Blogs"
+  }
+}
