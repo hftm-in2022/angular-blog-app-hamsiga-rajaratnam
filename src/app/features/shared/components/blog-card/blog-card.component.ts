@@ -12,6 +12,7 @@ import {
 } from "@angular/material/card";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-blog-card',
@@ -28,7 +29,8 @@ import {MatIcon} from "@angular/material/icon";
     MatCardTitle,
     NgForOf,
     MatIcon,
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslatePipe
   ],
   templateUrl: './blog-card.component.html',
   styleUrls: ['./blog-card.component.scss'],

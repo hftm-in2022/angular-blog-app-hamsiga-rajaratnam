@@ -1,6 +1,6 @@
 {
   "HEADER": {
-    "WELCOME_USER": "Welcome, {{ userEmail }}",
+    "WELCOME_USER": "Welcome",
     "HOME": "Home",
     "ADD_BLOG": "Add Blog",
     "LOGOUT": "Logout",
@@ -45,6 +45,7 @@
     "BLOG_CONTENT_REQUIRED": "Content is required.",
     "BLOG_CONTENT_MINLENGTH": "Content must be at least 10 characters long.",
     "IMAGE_URL": "Image URL (Optional)",
+    "BLOG_IMAGE_URL_PLACEHOLDER": "Enter image url",
     "SAVE_BLOG": "Save Blog",
     "REFRESH": "Refresh",
     "BACK_TO_ALL_BLOGS": "← Back to All Blogs"

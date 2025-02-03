@@ -1,6 +1,6 @@
 {
   "HEADER": {
-    "WELCOME_USER": "Willkommen, {{ userEmail }}",
+    "WELCOME_USER": "Willkommen",
     "HOME": "Startseite",
     "ADD_BLOG": "Blog hinzufügen",
     "LOGOUT": "Abmelden",
@@ -29,7 +29,7 @@
     "VIEW_MORE": "Mehr anzeigen"
   },
   "LOGIN_PAGE": {
-    "TITLE": "Login",
+    "TITLE": "Anmelden",
     "LOGGED_IN_MESSAGE": "Sie sind bereits angemeldet. Was möchten Sie tun?",
     "LOGOUT": "Abmelden",
     "BACK_HOME": "Zurück zur Startseite"
@@ -45,6 +45,7 @@
     "BLOG_CONTENT_REQUIRED": "Inhalt ist erforderlich.",
     "BLOG_CONTENT_MINLENGTH": "Inhalt muss mindestens 10 Zeichen lang sein.",
     "IMAGE_URL": "Bild-URL (Optional)",
+    "BLOG_IMAGE_URL_PLACEHOLDER": "Bildurl eingeben",
     "SAVE_BLOG": "Blog speichern",
     "REFRESH": "Aktualisieren",
     "BACK_TO_ALL_BLOGS": "← Zurück zu allen Blogs"
