@@ -1,9 +1,10 @@
 // Color Variables
-$primary-color: darkred;        // Indigo
-$secondary-color: #374A58;      // Pink
-$accent-color: darkred;         // Amber
-$background-color: #FFFF;      // Light Gray
-$card-background-color: #EBEFF2; // White
-$text-color: #212121;           // Dark Gray
-$link-color: $primary-color;    // Use primary color for links
-$hover-color: #FD746C;  // Use secondary color for hover effects
+$primary-color: darkred;
+$secondary-color: #12371D;
+$accent-color: darkred;
+$background-color: #FFFF;
+$card-background-color: #EBEFF2;
+$text-color-primary: #212121;
+$text-color-secondary: #ffff;
+$link-color: #FF8080;
+$hover-color: $secondary-color;
