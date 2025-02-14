@@ -4,7 +4,7 @@ import { BlogDetailOverView } from '../../../../models/blog.model';
 import {DatePipe, NgIf} from "@angular/common";
 import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 import {MatIcon} from "@angular/material/icon";
-import {MatButton} from "@angular/material/button";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-blog-detail',
@@ -20,8 +20,8 @@ import {MatButton} from "@angular/material/button";
     MatCardContent,
     MatIcon,
     MatCardActions,
-    MatButton,
-    MatCardTitle
+    MatCardTitle,
+    TranslatePipe
   ]
 })
 export class BlogDetailComponent {

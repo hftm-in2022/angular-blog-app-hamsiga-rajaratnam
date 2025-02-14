@@ -1,4 +1,4 @@
-@import '../../../../../assets/styles/variables.scss';
+@use '../../../../../assets/styles/variables' as *;
 
 .blog-list-container {
   padding:1% 5%;

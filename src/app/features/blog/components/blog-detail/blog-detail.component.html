@@ -16,11 +16,11 @@
     </mat-card-content>
     <mat-card-actions>
       <button class="button button--primary" (click)="goBack()">
-        Back to Overview
+        {{'BLOG_DETAIL.BACK_TO_OVERVIEW' | translate}}
       </button>
     </mat-card-actions>
   </mat-card>
 </div>
 
-<div *ngIf="loading" class="loading">Loading...</div>
+<div *ngIf="loading" class="loading">{{'BLOG_DETAIL.LOADING' | translate}}</div>
 <div *ngIf="error()" class="error">{{ error() }}</div>

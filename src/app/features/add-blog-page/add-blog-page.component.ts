@@ -7,6 +7,7 @@ import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {NgIf} from "@angular/common";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-add-blog-page',
@@ -19,6 +20,7 @@ import {NgIf} from "@angular/common";
     MatButtonModule,
     RouterLink,
     NgIf,
+    TranslatePipe,
   ],
   templateUrl: './add-blog-page.component.html',
   styleUrls: ['./add-blog-page.component.scss'],

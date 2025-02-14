@@ -5,12 +5,12 @@
       alt="Error Illustration"
       class="error-image"
     />
-    <h1 class="error-title">Oops! Something went wrong.</h1>
+    <h1 class="error-title">{{ 'ERROR_PAGE.TITLE' | translate }}</h1>
     <p class="error-message">
-      The page you’re looking for doesn’t exist or an error occurred.
+      {{ 'ERROR_PAGE.MESSAGE' | translate }}
     </p>
     <button routerLink="/" class="button button--primary error-btn">
-      Go Back to Home
+      {{ 'ERROR_PAGE.GO_HOME' | translate }}
     </button>
   </div>
 </div>

@@ -12,33 +12,36 @@
       <ng-container *ngIf="isAuthenticated">
         <div class="user-greeting">
           <mat-icon>account_circle</mat-icon>
-          <span>Welcome, {{ userEmail }}</span>
+          <span>{{ 'HEADER.WELCOME_USER' | translate }}, {{ userEmail }}</span>
         </div>
       </ng-container>
 
       <!-- Navigation Links -->
       <a routerLink="/" (click)="closeSidenav()">
         <mat-icon>home</mat-icon>
-        Home
+        {{'HEADER.HOME' | translate}}
       </a>
       <ng-container *ngIf="isAuthenticated">
         <a routerLink="/add-blog" (click)="closeSidenav()">
           <mat-icon>add_circle</mat-icon>
-          Add Blog
+          {{'HEADER.ADD_BLOG' | translate}}
         </a>
       </ng-container>
       <ng-container *ngIf="isAuthenticated; else guestLinks">
         <a (click)="logout()">
           <mat-icon>logout</mat-icon>
-          Logout
+          {{'HEADER.LOGOUT' | translate}}
         </a>
       </ng-container>
       <ng-template #guestLinks>
         <a (click)="login()">
           <mat-icon>login</mat-icon>
-          Login
+          {{'HEADER.LOGIN' | translate}}
         </a>
       </ng-template>
+      <ng-container>
+        <app-language-switcher></app-language-switcher>
+      </ng-container>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -67,31 +70,34 @@
         <ng-container *ngIf="isAuthenticated">
           <span class="user-greeting">
             <mat-icon>account_circle</mat-icon>
-            Welcome, {{ userEmail }}
+            {{ 'HEADER.WELCOME_USER' | translate }}, {{ userEmail }}
           </span>
         </ng-container>
         <a routerLink="/" routerLinkActive="active">
           <mat-icon>home</mat-icon>
-          Home
+          {{ 'HEADER.HOME' | translate }}
         </a>
         <ng-container *ngIf="isAuthenticated">
           <a routerLink="/add-blog" routerLinkActive="active">
             <mat-icon>add_circle</mat-icon>
-            Add Blog
+            {{ 'HEADER.ADD_BLOG' | translate }}
           </a>
         </ng-container>
         <ng-container *ngIf="isAuthenticated; else desktopGuestLinks">
           <button mat-button (click)="logout()">
             <mat-icon>logout</mat-icon>
-            Logout
+            {{ 'HEADER.LOGOUT' | translate }}
           </button>
         </ng-container>
         <ng-template #desktopGuestLinks>
           <button mat-button (click)="login()">
             <mat-icon>login</mat-icon>
-            Login
+            {{ 'HEADER.LOGIN' | translate }}
           </button>
         </ng-template>
+        <ng-container>
+          <app-language-switcher></app-language-switcher>
+        </ng-container>
       </div>
     </mat-toolbar>
 

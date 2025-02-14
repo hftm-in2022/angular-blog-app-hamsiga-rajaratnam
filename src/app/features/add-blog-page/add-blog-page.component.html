@@ -1,71 +1,71 @@
 <div class="add-blog-container">
   <div class="add-blog-card">
-    <h1 class="form-title">Add New Blog</h1>
+    <h1 class="form-title">{{ 'ADD_BLOG.TITLE' | translate}}</h1>
 
     <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
       <!-- Blog Title -->
       <div class="form-group">
-        <label for="title" class="form-label">Blog Title *</label>
+        <label for="title" class="form-label">{{ 'ADD_BLOG.BLOG_TITLE' | translate}}</label>
         <input
           type="text"
           id="title"
           class="form-control"
           formControlName="title"
-          placeholder="Enter blog title"
+          placeholder="{{'ADD_BLOG.BLOG_TITLE_PLACEHOLDER' | translate}}"
           data-gramm="false"
         />
         <div *ngIf="title?.touched && title?.invalid" class="error-message">
-          <small *ngIf="title?.errors?.['required']">Title is required.</small>
+          <small *ngIf="title?.errors?.['required']">{{ 'ADD_BLOG.BLOG_TITLE_REQUIRED' | translate}}</small>
           <small *ngIf="title?.errors?.['minlength']">
-            Title must be at least 5 characters long.
+            {{ 'ADD_BLOG.BLOG_TITLE_MINLENGTH' | translate}}
           </small>
         </div>
       </div>
 
       <!-- Blog Content -->
       <div class="form-group">
-        <label for="content" class="form-label">Blog Content *</label>
+        <label for="content" class="form-label">{{ 'ADD_BLOG.BLOG_CONTENT' | translate}}</label>
         <textarea
           id="content"
           class="form-control"
           formControlName="content"
-          placeholder="Write your blog content here"
+          placeholder="{{'ADD_BLOG.BLOG_CONTENT_PLACEHOLDER' | translate}}"
           rows="5"
           data-gramm="false"
         ></textarea>
         <div *ngIf="content?.touched && content?.invalid" class="error-message">
-          <small *ngIf="content?.errors?.['required']">Content is required.</small>
+          <small *ngIf="content?.errors?.['required']">{{ 'ADD_BLOG.BLOG_CONTENT_REQUIRED' | translate}}</small>
           <small *ngIf="content?.errors?.['minlength']">
-            Content must be at least 10 characters long.
+            {{ 'ADD_BLOG.BLOG_CONTENT_MINLENGTH' | translate}}
           </small>
         </div>
       </div>
 
       <!-- Image URL -->
       <div class="form-group">
-        <label for="headerImageUrl" class="form-label">Image URL (Optional)</label>
+        <label for="headerImageUrl" class="form-label">{{ 'ADD_BLOG.IMAGE_URL' | translate}}</label>
         <input
           type="url"
           id="headerImageUrl"
           class="form-control"
           formControlName="headerImageUrl"
-          placeholder="Enter image URL"
+          placeholder="{{ 'ADD_BLOG.BLOG_IMAGE_URL_PLACEHOLDER' | translate}}"
         />
       </div>
 
       <!-- Form Buttons -->
       <div class="form-actions">
         <button type="submit" class="btn button button--primary" [disabled]="blogForm.invalid">
-          Save Blog
+          {{ 'ADD_BLOG.SAVE_BLOG' | translate}}
         </button>
         <button type="button" class="btn button button--secondary" (click)="resetForm()">
-          Refresh
+          {{ 'ADD_BLOG.REFRESH' | translate}}
         </button>
       </div>
     </form>
 
     <div class="back-to-overview">
-      <a routerLink="/" class="back-link">← Back to All Blogs</a>
+      <a routerLink="/" class="back-link">{{ 'ADD_BLOG.BACK_TO_ALL_BLOGS' | translate}}</a>
     </div>
   </div>
 </div>
