@@ -1,27 +1,23 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/entries", "/entries/*", "/auth/*", "/api/*"]
+    "exclude": ["/entries", "/auth"]
   },
   "routes": [
     {
-      "route": "/entries/*",
-      "allowedMethods": ["GET", "POST"],
-      "rewrite": "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries/*"
+      "route": "/entries/{rest}",
+      "rewrite": "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries/{rest}"
     },
     {
       "route": "/entries",
-      "allowedMethods": ["GET", "POST"],
       "rewrite": "https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io/entries"
     },
     {
-      "route": "/auth/*",
-      "allowedMethods": ["GET", "POST"],
-      "rewrite": "https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io/*"
+      "route": "/auth/{rest}",
+      "rewrite": "https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io/{rest}"
     }
   ],
   "globalHeaders": {
-    "Access-Control-Allow-Origin": "*",
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io;"
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' wss: https://d-cap-blog-backend---v2.whitepond-b96fee4b.westeurope.azurecontainerapps.io https://d-cap-keyclaok.kindbay-711f60b2.westeurope.azurecontainerapps.io;"
   }
 }
