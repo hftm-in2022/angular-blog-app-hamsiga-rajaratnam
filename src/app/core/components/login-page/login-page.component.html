@@ -4,7 +4,7 @@
       <img src="assets/images/login.svg" alt="Login Illustration" class="login-image" />
       <div class="button-container">
         <button mat-raised-button (click)="login()" class="button button--primary login-btn">
-          Login
+          {{ 'LOGIN_PAGE.TITLE' | translate }}
         </button>
       </div>
     </div>
@@ -13,13 +13,13 @@
   <ng-template #loggedInTemplate>
     <div class="logged-in-container">
       <img src="assets/images/user-logged-in.svg" alt="Logged In Illustration" class="login-image" />
-      <p>You are already logged in. What would you like to do?</p>
+      <p>{{ 'LOGIN_PAGE.LOGGED_IN_MESSAGE' | translate }}</p>
       <div class="button-container">
         <button mat-raised-button class="button button--primary login-btn" (click)="logout()">
-          <mat-icon>logout</mat-icon> Logout
+          <mat-icon>logout</mat-icon> {{ 'LOGIN_PAGE.LOGOUT' | translate }}
         </button>
         <button mat-raised-button class="button button--primary login-btn" (click)="goToHome()">
-          <mat-icon>arrow_back</mat-icon> Back to Home
+          <mat-icon>arrow_back</mat-icon> {{ 'LOGIN_PAGE.BACK_HOME' | translate }}
         </button>
       </div>
     </div>

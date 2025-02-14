@@ -29,9 +29,8 @@
               "src/favicon.ico",
               "src/assets",
               {
-                "glob": "staticwebapp.config.json",
-                "input": "./",
-                "output": "./"
+                "glob": "**/*",
+                "input": "public"
               }
             ],
             "styles": [
@@ -44,8 +43,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "800kb",
+                  "maximumError": "1000kb"
                 },
                 {
                   "type": "anyComponentStyle",
