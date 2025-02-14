@@ -2,12 +2,11 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {HeaderComponent} from "./core/components/header/header.component";
 import {OidcSecurityService} from "angular-auth-oidc-client";
-import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, TranslatePipe],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

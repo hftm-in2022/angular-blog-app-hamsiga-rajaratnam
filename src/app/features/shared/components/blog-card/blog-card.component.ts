@@ -5,12 +5,10 @@ import {MatButton} from "@angular/material/button";
 import {
   MatCard,
   MatCardActions,
-  MatCardAvatar,
   MatCardContent,
   MatCardHeader,
   MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
-import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
 import {TranslatePipe} from "@ngx-translate/core";
 
@@ -21,15 +19,12 @@ import {TranslatePipe} from "@ngx-translate/core";
     MatButton,
     MatCard,
     MatCardActions,
-    MatCardAvatar,
     MatCardContent,
     MatCardHeader,
     MatCardImage,
     MatCardSubtitle,
     MatCardTitle,
-    NgForOf,
     MatIcon,
-    NgOptimizedImage,
     TranslatePipe
   ],
   templateUrl: './blog-card.component.html',
