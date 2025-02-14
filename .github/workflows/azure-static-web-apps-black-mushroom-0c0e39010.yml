@@ -33,8 +33,17 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
-          output_location: "dist/blog-app" # Built app content directory - optional
+          output_location: "dist/blog-app/browser" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+          continue-on-error: true
+      - name: Debug Deployment Errors
+        if: failure()
+        run: | 
+             echo "Deployment failed! Checking logs..."
+              echo "Checking directory structure..."
+              ls -l dist/blog-app/browser || echo "Output directory not found!"
+              echo "Checking workflow logs..."
+              cat /home/runner/work/_temp/_runner_file_commands || echo "No additional logs found."
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
