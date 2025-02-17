@@ -14,7 +14,7 @@ import { BlogEntryOverview } from '../../../../models/blog.model';
 })
 export class BlogListLayoutComponent implements OnInit {
   blogSignals = computed(() =>
-    this.blogState.blogEntries().map((entry) => signal(entry as BlogEntryOverview | null))
+    (this.blogState.blogEntries() || []).map((entry) => signal(entry as BlogEntryOverview | null))
   );
 
   constructor(public blogState: BlogState) {}
