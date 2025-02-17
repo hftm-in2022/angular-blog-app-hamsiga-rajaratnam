@@ -4,6 +4,7 @@ import {MatButton} from "@angular/material/button";
 import {Router} from "@angular/router";
 import {MatIconModule} from "@angular/material/icon";
 import {NgIf} from "@angular/common";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-login-page',
@@ -12,6 +13,7 @@ import {NgIf} from "@angular/common";
     MatButton,
     MatIconModule,
     NgIf,
+    TranslatePipe,
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss'

@@ -5,13 +5,12 @@ import {MatButton} from "@angular/material/button";
 import {
   MatCard,
   MatCardActions,
-  MatCardAvatar,
   MatCardContent,
   MatCardHeader,
   MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
-import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-blog-card',
@@ -20,15 +19,13 @@ import {MatIcon} from "@angular/material/icon";
     MatButton,
     MatCard,
     MatCardActions,
-    MatCardAvatar,
     MatCardContent,
     MatCardHeader,
     MatCardImage,
     MatCardSubtitle,
     MatCardTitle,
-    NgForOf,
     MatIcon,
-    NgOptimizedImage
+    TranslatePipe
   ],
   templateUrl: './blog-card.component.html',
   styleUrls: ['./blog-card.component.scss'],

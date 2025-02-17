@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { BlogCardComponent } from '../../../shared/components/blog-card/blog-card.component';
 import { BlogState } from '../../state/blog.state';
 import { BlogEntryOverview } from '../../../../models/blog.model';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-blog-list-layout',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, BlogCardComponent],
+  imports: [CommonModule, BlogCardComponent, TranslatePipe],
   templateUrl: './blog-list-layout.component.html',
   styleUrls: ['./blog-list-layout.component.scss'],
 })
